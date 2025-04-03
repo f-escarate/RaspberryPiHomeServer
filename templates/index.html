@@ -1,0 +1,16 @@
+<script>
+    function openSteam() {
+        fetch('/openSteam', {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+    }
+</script>
+
+<div>
+    <button onclick="openSteam()">
+        openSteam
+    </button>
+</div>
