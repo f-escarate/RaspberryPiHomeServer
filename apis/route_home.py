@@ -14,7 +14,7 @@ async def get_user():
     return HTMLResponse(template, status_code=200)
 
 @home_router.get("/openSteam")
-async def get_user():
+async def open_steam():
     # Opens the steamlink process
     print("aaaa")
     res = os.system("steamlink")
