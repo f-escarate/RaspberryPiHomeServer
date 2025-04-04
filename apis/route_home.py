@@ -27,3 +27,11 @@ async def open_vba():
     if res != 0:
         raise HTTPException(status_code=500, detail="Failed to open VBA")
     return {"message": "VBA is open"}
+
+@home_router.get("/turnOff")
+async def turn_off():
+    # Opens the vba process with popen
+    res = os.system("sudo shutdown now")
+    if res != 0:
+        raise HTTPException(status_code=500, detail="Failed to open VBA")
+    return {"message": "VBA is open"}
