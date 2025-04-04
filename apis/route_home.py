@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-import os
+import os, subprocess
 
 from fastapi.responses import HTMLResponse
 
@@ -19,3 +19,11 @@ async def open_steam():
     if res != 0:
         raise HTTPException(status_code=500, detail="Failed to open Steam Link")
     return {"message": "Steam is open"}
+
+@home_router.get("/openVBA")
+async def open_vba():
+    # Opens the vba process with popen
+    res = os.system("./run_vba.sh")
+    if res != 0:
+        raise HTTPException(status_code=500, detail="Failed to open VBA")
+    return {"message": "VBA is open"}

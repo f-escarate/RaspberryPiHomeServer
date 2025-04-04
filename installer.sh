@@ -1,6 +1,10 @@
 sudo apt update
 sudo apt install qrencode feh -y
 sudo apt install steamlink
+sudo apt install snapd -y
+sudo snap install snapd
+sudo snap install visualboyadvance-m
+sudo snap install --edge visualboyadvance-m
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 

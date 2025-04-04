@@ -22,13 +22,21 @@
             padding: 20px;
             font-size: 32px !important;
             border-radius: 25px;
+            cursor: pointer;
             @media screen and (max-width: 1000px) {
                 font-size: 80px !important;
                 padding: 40px;
             }
         }
+        button:hover {
+            opacity: 0.8;
+        }
         button.steam {
             background-color: #171d25;
+            color: white;
+        }
+        button.vba {
+            background-color: #652f8d;
             color: white;
         }
     </style>
@@ -41,12 +49,23 @@
             .then(res => console.log(res))
             .catch(err => console.log(err));
         }
+        function openVBA() {
+            fetch('/openVBA', {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+        }
     </script>
 </head>
 <body>
     <div class="buttons">
         <button class="steam" onclick="openSteam()">
             Abrir Steam
+        </button>
+        <button class="vba" onclick="openVBA()">
+            Abrir VBA
         </button>
     </div>
 </body>
