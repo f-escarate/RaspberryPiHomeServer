@@ -1,16 +1,54 @@
-<script>
-    function openSteam() {
-        fetch('/openSteam', {
-            method: 'GET'
-        })
-        .then(response => response.json())
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
-    }
-</script>
+<!DOCTYPE html>
+<html>
 
-<div>
-    <button onclick="openSteam()">
-        openSteam
-    </button>
-</div>
+<head>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        div.buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        button {
+            width: 80%;
+            padding: 20px;
+            font-size: 32px !important;
+            border-radius: 25px;
+            @media screen and (max-width: 1000px) {
+                font-size: 80px !important;
+                padding: 40px;
+            }
+        }
+        button.steam {
+            background-color: #171d25;
+            color: white;
+        }
+    </style>
+    <script>
+        function openSteam() {
+            fetch('/openSteam', {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+        }
+    </script>
+</head>
+<body>
+    <div class="buttons">
+        <button class="steam" onclick="openSteam()">
+            Abrir Steam
+        </button>
+    </div>
+</body>
+
+</html>
